@@ -8,6 +8,11 @@ group = "com.runicrealms.plugin"
 version = "1.0-SNAPSHOT"
 
 dependencies {
+    // No shadow
+    compileOnly(commonLibs.spigot)
+    compileOnly(commonLibs.paper)
+
+    // Shadow
     implementation(commonLibs.jedis)
     implementation(commonLibs.acf)
     implementation(commonLibs.taskchain)
