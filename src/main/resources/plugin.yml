@@ -4,3 +4,4 @@ api-version: 1.15
 main: com.runicrealms.plugin.common.RunicCommon
 description: Common plugin for dependencies in Runic Realms
 author: Excel
+loadbefore: [ MythicMobs ]

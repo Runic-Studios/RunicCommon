@@ -6,6 +6,7 @@ plugins {
 
 group = "com.runicrealms.plugin"
 version = "1.0-SNAPSHOT"
+val artifactName = "common"
 
 dependencies {
     // No shadow
@@ -38,18 +39,9 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             groupId = "com.runicrealms.plugin"
-            artifactId = "items"
+            artifactId = artifactName
             version = "1.0-SNAPSHOT"
             from(components["java"])
         }
     }
 }
-
-//tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
-//    relocate("co.aikar.commands", "com.runicrealms.libs.acf")
-//    relocate("co.aikar.locales", "com.runicrealms.libs.locales")
-//    relocate("co.aikar.taskchain", "com.runicrealms.libs.taskchain")
-//}
-
-tasks.register("wrapper")
-tasks.register("prepareKotlinBuildScriptModel")
