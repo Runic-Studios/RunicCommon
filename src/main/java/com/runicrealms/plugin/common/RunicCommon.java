@@ -19,7 +19,7 @@ public class RunicCommon extends JavaPlugin {
     }
 
     public static void registerAchievementsAPI(AchievementsAPI api) {
-        if (achievementsAPI == null)
+        if (achievementsAPI != null)
             throw new IllegalStateException("Achievements API can not be registered: already registered!");
         achievementsAPI = api;
     }
