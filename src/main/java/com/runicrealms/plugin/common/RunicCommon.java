@@ -25,7 +25,7 @@ public class RunicCommon extends JavaPlugin {
     }
 
     public static void registerConfigAPI(ConfigAPI api) {
-        if (configAPI == null)
+        if (configAPI != null)
             throw new IllegalStateException("Config API can not be registered: already registered!");
         configAPI = api;
     }
