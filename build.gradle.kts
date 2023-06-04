@@ -32,6 +32,8 @@ dependencies {
     implementation(commonLibs.spark)
     implementation(commonLibs.menus)
     implementation(commonLibs.jda)
+    implementation(commonLibs.log4japi)
+    implementation(commonLibs.log4jcore)
 }
 
 java {
