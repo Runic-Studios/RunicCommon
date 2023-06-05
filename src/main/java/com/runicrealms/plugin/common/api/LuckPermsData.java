@@ -40,6 +40,11 @@ public interface LuckPermsData {
     boolean getBoolean(String key);
 
     /**
+     * Gets a long value from this LuckPerms metadata
+     */
+    long getLong(String key);
+
+    /**
      * Gets a generic Object value from this LuckPerms metadata.
      * Type changes depending on how it is stored in the implementation of this interface.
      */
