@@ -137,6 +137,24 @@ public class GUIUtil {
         return item;
     }
 
+    public static ItemStack dispItem(Material material, String name, List<String> lore, Integer... durability) {
+        ItemStack item = new ItemStack(material);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
+        List<String> list = new ArrayList<String>();
+        for (String line : lore) {
+            list.add(ChatColor.translateAlternateColorCodes('&', line));
+        }
+        meta.setLore(list);
+        if (durability.length > 0) {
+            ((Damageable) meta).setDamage(durability[0]);
+            meta.setUnbreakable(true);
+        }
+        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_UNBREAKABLE);
+        item.setItemMeta(meta);
+        return item;
+    }
+
     public static ItemStack setLore(ItemStack item, String[] lore) {
         ItemMeta meta = item.getItemMeta();
         List<String> list = new ArrayList<String>();
