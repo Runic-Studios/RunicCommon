@@ -8,9 +8,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class RunicCommon extends JavaPlugin {
 
+    private static RunicCommon instance;
     private static AchievementsAPI achievementsAPI;
     private static ConfigAPI configAPI;
     private static LuckPermsAPI luckPermsAPI;
+
+    public static RunicCommon getInstance() {
+        return instance;
+    }
 
     public static AchievementsAPI getAchievementsAPI() {
         return achievementsAPI;
@@ -23,6 +28,7 @@ public class RunicCommon extends JavaPlugin {
     public static LuckPermsAPI getLuckPermsAPI() {
         return luckPermsAPI;
     }
+
 
     public static void registerAchievementsAPI(AchievementsAPI api) {
         if (achievementsAPI != null)
@@ -44,6 +50,7 @@ public class RunicCommon extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        instance = this;
         Bukkit.getLogger().info("[RunicCommon] Common Dependencies have loaded");
     }
 

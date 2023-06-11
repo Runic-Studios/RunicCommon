@@ -15,6 +15,7 @@ dependencies {
     // No shadow
     compileOnly(commonLibs.spigot)
     compileOnly(commonLibs.paper)
+    compileOnly(commonLibs.luckperms)
 
     // Shadow
     implementation(commonLibs.jedis)
