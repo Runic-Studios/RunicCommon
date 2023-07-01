@@ -5,3 +5,4 @@ main: com.runicrealms.plugin.common.RunicCommon
 description: Common plugin for dependencies in Runic Realms
 author: Excel
 loadbefore: [ MythicMobs ]
+softdepend: [ RunicCore, RunicDatabase, RunicGuilds, RunicAchievements ] # Prevents the console messages saying that we access other plugins
