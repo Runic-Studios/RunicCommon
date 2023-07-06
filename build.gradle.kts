@@ -34,6 +34,7 @@ dependencies {
     implementation(commonLibs.menus)
     implementation(commonLibs.log4japi)
     implementation(commonLibs.log4jcore)
+    implementation(commonLibs.jgit)
 }
 
 java {
