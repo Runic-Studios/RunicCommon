@@ -1,15 +1,23 @@
 package com.runicrealms.plugin.common.util;
 
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 public enum ArmorType {
 
-    HELMET(5), CHESTPLATE(6), LEGGINGS(7), BOOTS(8), OFFHAND(40);
+    HELMET(5, EquipmentSlot.HEAD),
+    CHESTPLATE(6, EquipmentSlot.CHEST),
+    LEGGINGS(7, EquipmentSlot.LEGS),
+    BOOTS(8, EquipmentSlot.FEET),
+    OFFHAND(40, EquipmentSlot.OFF_HAND);
 
     private final int slot;
+    private final EquipmentSlot equipmentSlot;
 
-    ArmorType(int slot) {
+    ArmorType(int slot, @NotNull EquipmentSlot equipmentSlot) {
         this.slot = slot;
+        this.equipmentSlot = equipmentSlot;
     }
 
     /**
@@ -34,5 +42,10 @@ public enum ArmorType {
 
     public int getSlot() {
         return slot;
+    }
+
+    @NotNull
+    public EquipmentSlot getEquipmentSlot() {
+        return this.equipmentSlot;
     }
 }
