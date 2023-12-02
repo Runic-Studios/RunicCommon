@@ -31,7 +31,6 @@ dependencies {
     implementation(commonLibs.httpclient)
     implementation(commonLibs.commonsio)
     implementation(commonLibs.spark)
-    implementation(commonLibs.menus)
     implementation(commonLibs.log4japi)
     implementation(commonLibs.log4jcore)
     implementation(commonLibs.jgit)
