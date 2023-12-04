@@ -1,15 +1,6 @@
-val artifactName = "common"
-val rrGroup: String by rootProject.extra
-val rrVersion: String by rootProject.extra
-
 plugins {
-    `java-library`
-    `maven-publish`
-    id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("com.github.johnrengelman.shadow")
 }
-
-group = rrGroup
-version = rrVersion
 
 dependencies {
     // No shadow
@@ -34,19 +25,4 @@ dependencies {
     implementation(commonLibs.log4japi)
     implementation(commonLibs.log4jcore)
     implementation(commonLibs.jgit)
-}
-
-java {
-    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
-}
-
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = rrGroup
-            artifactId = artifactName
-            version = rrVersion
-            from(components["java"])
-        }
-    }
 }
