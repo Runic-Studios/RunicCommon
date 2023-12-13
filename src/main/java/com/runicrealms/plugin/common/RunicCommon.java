@@ -4,6 +4,7 @@ import com.runicrealms.plugin.common.api.AchievementsAPI;
 import com.runicrealms.plugin.common.api.ConfigAPI;
 import com.runicrealms.plugin.common.api.GuildsAPI;
 import com.runicrealms.plugin.common.api.LuckPermsAPI;
+import com.runicrealms.plugin.common.api.RunicPvPAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -14,6 +15,7 @@ public class RunicCommon extends JavaPlugin {
     private static ConfigAPI configAPI;
     private static LuckPermsAPI luckPermsAPI;
     private static GuildsAPI guildsAPI;
+    private static RunicPvPAPI pvpAPI;
 
     public static RunicCommon getInstance() {
         return instance;
@@ -33,6 +35,10 @@ public class RunicCommon extends JavaPlugin {
 
     public static GuildsAPI getGuildsAPI() {
         return guildsAPI;
+    }
+
+    public static RunicPvPAPI getPvPAPI() {
+        return pvpAPI;
     }
 
 
@@ -58,6 +64,12 @@ public class RunicCommon extends JavaPlugin {
         if (guildsAPI != null)
             throw new IllegalArgumentException("GuildsAPI cannot be registered: already registered!");
         guildsAPI = api;
+    }
+
+    public static void registerPvPAPI(RunicPvPAPI api) {
+        if (pvpAPI != null)
+            throw new IllegalArgumentException("PvPAPI cannot be registered: already registered!");
+        pvpAPI = api;
     }
 
     @Override
