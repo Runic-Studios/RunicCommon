@@ -1,5 +1,7 @@
 package com.runicrealms.plugin.common.api;
 
+import net.luckperms.api.context.ContextSet;
+
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
@@ -34,5 +36,10 @@ public interface LuckPermsAPI {
      * when the payload is to be executed.
      */
     LuckPermsPayload createPayload(UUID owner, Consumer<LuckPermsData> writeConsumer);
+
+    /**
+     * Gets the luck perms context that will filter for only nodes active on this server.
+     */
+    ContextSet getServerSpecificContext();
 
 }
