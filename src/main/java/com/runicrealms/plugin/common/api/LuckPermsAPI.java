@@ -1,9 +1,9 @@
 package com.runicrealms.plugin.common.api;
 
+import com.runicrealms.plugin.common.util.BukkitPromise;
 import net.luckperms.api.context.ContextSet;
 
 import java.util.UUID;
-import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
 public interface LuckPermsAPI {
@@ -22,13 +22,13 @@ public interface LuckPermsAPI {
     /**
      * Retrieve all LuckPerms metadata for a given user.
      */
-    CompletableFuture<LuckPermsData> retrieveData(UUID owner);
+    BukkitPromise<LuckPermsData> retrieveData(UUID owner);
 
     /**
      * Retrieve all LuckPerms metadata for a given user.
      * If ignoreCache is true, forcibly reloads it from the DB, ignoring cached values.
      */
-    CompletableFuture<LuckPermsData> retrieveData(UUID owner, boolean ignoreCache);
+    BukkitPromise<LuckPermsData> retrieveData(UUID owner, boolean ignoreCache);
 
     /**
      * Creates a generic payload object, where the given Consumer of LuckPermsData
