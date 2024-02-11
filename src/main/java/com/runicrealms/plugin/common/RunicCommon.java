@@ -6,6 +6,7 @@ import com.runicrealms.plugin.common.api.GuildsAPI;
 import com.runicrealms.plugin.common.api.LuckPermsAPI;
 import com.runicrealms.plugin.common.api.QuestsAPI;
 import com.runicrealms.plugin.common.api.RunicPvPAPI;
+import com.runicrealms.plugin.common.resourcepack.ResourcePackManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -87,6 +88,8 @@ public class RunicCommon extends JavaPlugin {
     public void onEnable() {
         instance = this;
         Bukkit.getLogger().info("[RunicCommon] Common Dependencies have loaded");
+
+        Bukkit.getPluginManager().registerEvents(new ResourcePackManager(), this);
     }
 
 }
