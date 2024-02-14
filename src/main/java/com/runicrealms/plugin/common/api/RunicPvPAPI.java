@@ -73,6 +73,14 @@ public interface RunicPvPAPI {
     void toggleOutlaw(Player player);
 
     /**
+     * Toggle a player's outlaw status
+     *
+     * @param player                 to toggle
+     * @param ignoreLevelRequirement if the plugin should ignore the level 25 requirement to toggle outlaw
+     */
+    void toggleOutlaw(Player player, boolean ignoreLevelRequirement);
+
+    /**
      * Gets the PvP data for a player
      * Returns null if data hasn't been loaded (wait for character loaded!)
      *
