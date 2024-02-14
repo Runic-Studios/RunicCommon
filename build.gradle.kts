@@ -7,6 +7,7 @@ dependencies {
     compileOnly(commonLibs.spigot)
     compileOnly(commonLibs.paper)
     compileOnly(commonLibs.luckperms)
+    compileOnly(commonLibs.modelengine)
 
     // Shadow
     implementation(commonLibs.jedis)
